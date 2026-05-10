@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Nihaal & Hajara — Wedding Invitation</title>
+
+<!-- OG Tags — static, always show thumbnail -->
+<meta property="og:title" content="Nihaal & Hajara — Wedding Invitation" />
+<meta property="og:description" content="23 May 2026 · MKM Convention Center, Aloor" />
+<meta property="og:image" content="https://res.cloudinary.com/dormnrhdf/image/upload/w_1200,h_630,c_fill,g_faces/v1778435863/IMG-20260510-WA0013_qx3qbz.jpg" />
+<meta property="og:image:secure_url" content="https://res.cloudinary.com/dormnrhdf/image/upload/w_1200,h_630,c_fill,g_faces/v1778435863/IMG-20260510-WA0013_qx3qbz.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:url" content="https://murshid161-sketch.github.io/Nihaal_weds_hajara/invite.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="DigiWed" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://res.cloudinary.com/dormnrhdf/image/upload/w_1200,h_630,c_fill,g_faces/v1778435863/IMG-20260510-WA0013_qx3qbz.jpg" />
+
+<style>
+  body { margin:0; background:#f5ede0; display:flex; align-items:center; justify-content:center; min-height:100vh; font-family:serif; }
+  .loader { text-align:center; color:#9a7b3a; }
+  .loader div { font-size:13px; letter-spacing:.3em; margin-top:12px; opacity:.6; }
+</style>
+</head>
+<body>
+<div class="loader">
+  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#9a7b3a" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  <div>OPENING INVITATION…</div>
+</div>
+<script>
+  // Read guest name from this page's URL, redirect to main invite with guest param
+  const params = new URLSearchParams(window.location.search);
+  const guest = params.get('guest') || '';
+  const base = 'https://murshid161-sketch.github.io/Nihaal_weds_hajara/';
+  const target = guest ? base + '?guest=' + encodeURIComponent(guest) : base;
+  window.location.replace(target);
+</script>
+</body>
+</html>
