@@ -642,10 +642,11 @@ function shareVideo(){
   else{ navigator.clipboard&&navigator.clipboard.writeText(url); showToast('Link copied ✦'); }
 }
 
-let userLiked=false;
+let userLiked=localStorage.getItem('liked_video')==='1'; // per-device guard: survives reloads
 function toggleLike(){
   if(!window.db){showToast('Loading…');return;}
   userLiked=!userLiked;
+  localStorage.setItem('liked_video', userLiked?'1':'0');
   const icon=document.getElementById('likeIcon');
   if(userLiked){
     icon.setAttribute('fill','#e0305a'); icon.setAttribute('stroke','#e0305a');
@@ -658,6 +659,10 @@ function toggleLike(){
 }
 function loadLikes(){
   if(!window.db) return;
+  if(userLiked){
+    const icon=document.getElementById('likeIcon');
+    if(icon){ icon.setAttribute('fill','#e0305a'); icon.setAttribute('stroke','#e0305a'); }
+  }
   window.db.ref(LIKE_PATH).on('value',snap=>{
     const n=snap.val()||0;
     document.getElementById('likeCount').textContent=n;
@@ -746,8 +751,6 @@ document.addEventListener('DOMContentLoaded', function(){
 document.addEventListener('DOMContentLoaded', function(){
   setTimeout(function(){ if(typeof loadWishes==='function') loadWishes(); }, 600);
 });
-</script>
-
 </script>
 
 
